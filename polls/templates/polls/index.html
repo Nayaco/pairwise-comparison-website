@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	 <!-- Bootstrap core CSS -->
+    <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/jumbotron.css" rel="stylesheet">
+
+    <!-- css for particles -->
+    <link href="/static/dist/css/particles.css" rel="stylesheet">
+
+<!-- 	<style type="text/css">
+		body, html {width: 100% ;height: 100%; margin:0;font-family:"微软雅黑";overflow-x: auto;}
+
+	</style> -->
+	
+	<title>居住偏好度标注</title>
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <img height="50" src="img/sheep2.jpeg" align="left" hspace="6" style="margin-left:-6p;margin-right:20px"> -->
+          <a class="navbar-brand" href="#">上海市各地区居住偏好度调查</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+      	<h3><strong>1. 简介</strong></h3> 
+
+		<p>本问卷旨在调查居民对上海市各个地点的<strong>居住偏好</strong>，以支持浙江大学计算机学院人工智能研究所的一份<a href=http://yangy.org/#research target="_blank">社会计算研究课题</a>。<br><br>
+
+		本问卷的数据将进行匿名化处理，并只用于科研用途。<br> <br>
+
+		p.s. 回答10次以上后网页会现实支付宝口令红包，先到先得，感谢填写！<br></p>
+
+        </div>
+      </div>
+    </div>
+
+	<div class="container">
+		        <div class="page-header">
+            <h3>2. 项目介绍</h3>
+        </div>
+        <img width="295" src="http://yangy.org/works/migrant/graphical.png" align="left" style="margin-left:20px;margin-right:40px">
+        <p>
+        前所未有的人员流动推动了全球的快速城市化。 在中国，1978年至2012年间，城市居住人口比例从17.9％增加到52.6％。这种大规模迁移对政策制定者提出了重大挑战，也对研究人员提供了更新颖、更有意义的研究课题。
+        </p>
+        <p>
+        我们做了一些有趣的工作来加深对移民融合过程的理解，并能帮助更多的移民实现他们的“城市梦”。我们首先使用上海电信用户的移动通话元数据，研究本地居民和移民之间在移动通信网络和地理位置中的系统差异 (<a href="http://yangy.org/works/migrant/urban_dream.pdf">Yang et al., AAAI'18</a>)。通过区分新移民（最近移居上海）和定居移民（曾在上海居住过一段时间），我们也展示了新移民的融合过程。
+		</p>
+		<p>
+此外，我们通过进一步采用房价数据集来调查新移民在来上海的前几周的行为，并着重研究促使移民提前离开上海的原因 (<a href="http://yangy.org/works/migrant/migrant_churn.pdf">Yang et al., WWW'18</a>)。
+        </p>
+        <p>
+        我们希望我们的研究能够鼓励更多社区中的研究人员从不同角度审视移民融合问题，并最终形成有利于政策制定和数百万移民的方法和应用。
+        </p>
+        <p>
+        <b>Related papers: </b>
+        (<a href="http://yangy.org/works/migrant/migrant_churn.pdf">Yang et al., WWW'18</a>), 
+        (<a href="http://yangy.org/works/migrant/urban_dream.pdf">Yang et al., AAAI'18</a>)
+        </p>
+        更多详细内容可见<a href=http://yangy.org/#research target="_blank">杨洋</a>教授的主页。
+        <br>
+        <br>
+
+        <div class="page-header">
+            <h3>3. 基本信息</h3>
+            <p>为了消除年龄、性别等因素带来的偏差，我们希望统计您的年龄、性别以及对上海的熟悉程度信息。这些数据将只用于科学研究。</p>
+
+        </div>
+        <form action="{% url 'polls:initvote' %}" method="post"> 
+			{%csrf_token%}
+			<h4><strong> 2.1 {{latest_question_list.0.question_text}} </strong></h4>
+				{% for choice in latest_question_list.0.choice_set.all %}
+			    	<input type="radio" name="choice0" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+			    	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+			    {%endfor%}
+			<h4><strong> 2.2 {{latest_question_list.1.question_text}} </strong></h4>
+				{% for choice in latest_question_list.1.choice_set.all %}
+			    	<input type="radio" name="choice1" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+			    	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+			    {%endfor%}
+			<br>
+			<input type="submit" value="提交并正式进入问卷">
+		</form>
+
+		<div class="page-header">
+            <h3><strong>Contact:</strong></h3> 
+        </div>		
+		<a href=http://yangy.org target="_blank">杨洋</a>, <a href=http://www.cs.zju.edu.cn target="_blank">浙江大学计算机学院</a>副教授<br>
+		email: yangya {at} zju {dot} edu {dot} cn<br>
+
+    </div>
+
+<h3><strong></strong></h3> 
+
+
+<!-- <button onclick="location.href='{% url 'polls:detail' 1 %}'" type="button">开始回答</button> -->
+<!--upload all. question_id = 0-->
+<!-- <form action="{% url 'polls:vote' 0 %}" method="post"> 
+	{% csrf_token %}
+	<input type="radio" name="choice" id="choice0" value="{{question.choice_set.all.0.id}}">
+	<label for="choice0">{{question.choice_set.all.0.choice_text}}</label><br>
+		
+
+	<br>
+	<div id="submit_container">
+		<input type="submit" value="提交">
+	</div>
+</form> -->
+
+
+
+    <!-- ClustrMaps code -->
+
+    
+    <!--
+    <footer>
+        <p style="margin:10px;">Created by <a href="">Yang Yang</a>, using a design from <a href="http://getbootstrap.com/"> bootstrap </a></p>
+    </footer>
+    </div>
+    -->
+    <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <!-- particles -->
+    <script src="dist/js/particles.min.js"></script>
+    <script src="dist/js/particles.js"></script>
+
+</body>

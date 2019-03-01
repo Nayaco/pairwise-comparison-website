@@ -1,0 +1,6 @@
+.DS_Store
+data/
+*.sqlite3
+polls/static/
+polls/migrations/
+**/__pycache__

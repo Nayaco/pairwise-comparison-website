@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100% ;height: 100%; margin:0;font-family:"微软雅黑";overflow-x: auto;}
+
+		#ouraction{width:95%;height:150%;float:left;overflow: hidden;margin:0;}
+
+		#map1_container,#map2_container {width:90%;height:30%;float:left;overflow: hidden;margin:0;}
+		
+		#submit_container,#button1,#button2 {margin:1% 5% 1%;width:90%;height:5%;float:left;overflow: hidden;}
+		/*#allmap1 {width: 90% ;height: 60%; margin:0;font-family:"微软雅黑";} /*display: -webkit-box;overflow-x: auto;-webkit-overflow-scrolling:touch;*/
+
+		#allmap1{margin:1% 5% 1%;height:100%;}
+		#allmap2{margin:1% 5% 1%;height:100%;}
+
+		#resource{margin:1% 5% 1%;width:90%;height:100%;float:left;overflow: hidden;}
+
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s9gjglZAGLCixdSpnlnGuSWaVdLYfGtj"></script>
+	<title>居住偏好度标注</title>
+</head>
+<body>
+
+
+
+
+	<h1>{{ question.question_text }}</h1>
+
+	<p><strong>地图可以用鼠标滚轮或指尖拖动进行放大，将鼠标或指尖放在空白区域可以上下滑动页面</strong></p>
+
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	{%if question.id == 1 or question.id == 2 or compare_list%}
+
+	<form action="{% url 'polls:vote' question.id %}" method="post" id="ouraction">
+		{% csrf_token %}
+			<div id="map1_container">
+				<div id="allmap1"></div>
+				
+			</div>
+			<div id="button1">
+					<input type="radio" name="choice" id="choice0" value="{{question.choice_set.all.0.id}}">
+					<label for="choice0">{{question.choice_set.all.0.choice_text}}</label><br>
+			</div>
+			
+			<div id="map2_container">
+				<div id="allmap2"></div>
+				
+			</div>
+			<div id="button2">
+				<input type="radio" name="choice" id="choice1" value="{{question.choice_set.all.1.id}}">
+				<label for="choice1">{{question.choice_set.all.1.choice_text}}</label><br>
+			</div>
+
+		<br>
+		<div id="submit_container">
+			<input type="submit" value="提交">
+		</div>
+	</form>
+
+	{%endif%}
+
+	<br>
+
+<!-- 	{%if question.id == 3 or question.id == 4 %} 
+	<form action="{% url 'polls:getpair' question.id %}" method="post">
+		{% csrf_token %}
+		{% if keep_going %}
+		<input type="submit" value="在地图上生成需要比较的地点">
+		{%else%}
+		<input type="submit" value="在地图上生成需要比较的地点">
+		{%endif%}
+	</form>
+	<br>
+	<br>
+	
+	{%endif%} -->
+<!-- <div id = "duck">
+	<h1>{{ question.question_text }}</h1>
+	<h1>{{ question.question_text }}</h1>
+	<h1>{{ question.question_text }}</h1>
+	<h1>{{ question.question_text }}</h1>
+</div> -->
+</body>
+</html>
+
+
+{%if compare_list%}
+<script type="text/javascript">
+	function rad(deg){
+		return deg / 180 * 3.1415926535;
+	} 
+	function get_location(lng1, lat1, lng2, lat2){
+		EARTH_RADIUS = 6378.137;
+	    radLat1 = rad(lat1);
+	    radLat2 = rad(lat2);
+	    a = radLat1 - radLat2;;
+	    b = rad(lng1) - rad(lng2);
+	    s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +  Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b/2),2)));
+	    s = s * EARTH_RADIUS;
+		return s;
+	}
+	var loclist = {{ compare_list }};
+	var center_point_1 = new BMap.Point( loclist[0][1], loclist[0][0]);
+	var center_point_2 = new BMap.Point( loclist[1][1], loclist[1][0]);
+	var level = 10;
+	
+	if ( get_location(loclist[0][1], loclist[0][0], loclist[1][1], loclist[1][0]) >= 50){
+		level = 9;
+	}
+
+</script>
+{%else%}
+<script type="text/javascript">
+	var center_point = new BMap.Point(121.404, 31.25);
+	var level = 10;
+</script>
+{%endif%}
+<script type="text/javascript">
+	// 百度地图API功能
+	var map1 = new BMap.Map("allmap1");
+	// 这里地图可以搞个自适应的大小
+	// var point = new BMap.Point(121.404, 31.25);
+	map1.centerAndZoom(center_point_1, 13);
+	// 编写自定义函数,创建标注
+	// function addMarker(point){
+	//   var marker = new BMap.Marker(point);
+	//   map.addOverlay(marker);
+	// }
+	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL});
+
+	map1.addControl(top_left_control);        
+	map1.addControl(top_left_navigation);     
+	map1.addControl(top_right_navigation);    
+	
+	var map2 = new BMap.Map("allmap2");
+	// 这里地图可以搞个自适应的大小
+	// var point = new BMap.Point(121.404, 31.25);
+	map2.centerAndZoom(center_point_2, 13);
+	// 编写自定义函数,创建标注
+	// function addMarker(point){
+	//   var marker = new BMap.Marker(point);
+	//   map.addOverlay(marker);
+	// }
+	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL});
+
+	map2.addControl(top_left_control);        
+	map2.addControl(top_left_navigation);     
+	map2.addControl(top_right_navigation);  
+	// 在这里添加在地图上标注的点
+	// var a = {{ question.question_text }}
+
+	// var point_A = new BMap.Point(121.404, 31.25);
+
+	// var point_B = new BMap.Point(121.804, 31.05);
+
+	// var marker = new BMap.Marker(point_A);  // 创建标注
+	// map.addOverlay(marker);               // 将标注添加到地图中
+	// marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+	// var label = new BMap.Label("A",{offset:new BMap.Size(20,-10)});
+	// marker.setLabel(label);
+
+	// var marker_B = new BMap.Marker(point_B);  // 创建标注
+	// map.addOverlay(marker_B);               // 将标注添加到地图中
+	// marker_B.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+	// var label_B = new BMap.Label("B",{offset:new BMap.Size(20,-10)});
+	// marker_B.setLabel(label_B);
+
+
+</script>
+	
+	{%if compare_list%}
+
+<script type="text/javascript">	
+	
+	var loclist = {{ compare_list }};
+	for(i in loclist){
+        var point = new BMap.Point(loclist[i][1], loclist[i][0]);
+        var marker = new BMap.Marker(point);  // 创建标注
+        
+		
+		if (i == 0){
+			map1.addOverlay(marker);               // 将标注添加到地图中
+			marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+			var label = new BMap.Label("A",{offset:new BMap.Size(20,-10)});
+		}
+		else{
+			map2.addOverlay(marker);               // 将标注添加到地图中
+			marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画			
+			var label = new BMap.Label("B",{offset:new BMap.Size(20,-10)});
+		}
+		marker.setLabel(label);
+    }
+</script>
+	{%endif%}
+
+<script type="text/javascript">
+	map1.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的
+	map1.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	map2.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的
+	map2.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>

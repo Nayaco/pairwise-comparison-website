@@ -1,0 +1,1165 @@
+2019-01-07 12:08:55,686 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:81] - INFO: delete success
+2019-01-07 12:23:12,322 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:78] - INFO: delete previous entropy file success
+2019-01-07 13:47:17,400 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/5/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: polls_question
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/views/generic/detail.py", line 106, in get
+    self.object = self.get_object()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/views/generic/detail.py", line 52, in get_object
+    obj = queryset.get()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: polls_question
+2019-01-07 13:47:18,591 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 190, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 241, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 212, in inner
+    if not self.has_permission(request):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 186, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/functional.py", line 213, in inner
+    self._setup()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/functional.py", line 347, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 55, in __getitem__
+    return self._session[key]
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 195, in _get_session
+    self._session_cache = self.load()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+    expire_date__gt=timezone.now()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+2019-01-07 14:01:59,433 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:78] - INFO: delete previous entropy file success
+2019-01-07 14:02:27,592 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:78] - INFO: delete previous entropy file success
+2019-01-07 14:06:15,750 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 213, in getpair
+    if this_user[0].num_compare_cnt >= 10 and ip != 'unknown':
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 285, in __getitem__
+    return self._result_cache[k]
+IndexError: list index out of range
+2019-01-07 14:06:34,963 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:78] - INFO: delete previous entropy file success
+2019-01-07 14:06:56,011 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:78] - INFO: delete previous entropy file success
+2019-01-07 14:07:20,989 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:78] - INFO: delete previous entropy file success
+2019-01-07 14:09:01,419 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:63] - ERROR: no entropyinit file found, reconstruct
+2019-01-07 14:32:42,888 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:63] - ERROR: no entropyinit file found, reconstruct
+2019-01-07 14:34:19,148 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 14:34:46,136 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 14:35:46,964 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 15:03:47,860 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 15:03:56,340 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py[line:77] - ERROR: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2019-01-07 15:03:56,414 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Bad Request: /polls/3/
+2019-01-07 15:03:57,293 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py[line:77] - ERROR: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2019-01-07 15:03:57,318 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Bad Request: /favicon.ico
+2019-01-07 15:04:02,224 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py[line:77] - ERROR: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2019-01-07 15:04:02,258 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Bad Request: /polls/
+2019-01-07 15:04:02,528 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py[line:77] - ERROR: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2019-01-07 15:04:02,553 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Bad Request: /favicon.ico
+2019-01-07 15:04:38,967 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 15:04:45,491 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /favicon.ico
+2019-01-07 19:11:30,022 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 19:11:36,463 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /favicon.ico
+2019-01-07 20:08:24,611 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:09:30,925 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:09:43,839 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:14:22,452 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/vote/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 75, in vote
+    selected_choice = question.choice_set.get(pk=request.POST['choice'])
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-07 20:15:01,211 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:17:25,739 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[0].choice_text' from 'question.choice_set.all[0].choice_text'
+2019-01-07 20:20:02,010 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'question.choice_set.all[0].choice_text'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 71: 'question.choice_set.all[0].choice_text', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2019-01-07 20:21:45,781 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(id=1)' from 'question.choice_set.all.get(id=1)'
+2019-01-07 20:22:04,270 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 858, in _resolve_lookup
+    current = current()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 403, in get
+    (self.model._meta.object_name, num)
+polls.models.Choice.MultipleObjectsReturned: get() returned more than one Choice -- it returned 2!
+2019-01-07 20:22:19,789 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[1]' from 'question.choice_set.all.get[1]'
+2019-01-07 20:22:28,070 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 858, in _resolve_lookup
+    current = current()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 403, in get
+    (self.model._meta.object_name, num)
+polls.models.Choice.MultipleObjectsReturned: get() returned more than one Choice -- it returned 2!
+2019-01-07 20:22:28,150 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 858, in _resolve_lookup
+    current = current()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 403, in get
+    (self.model._meta.object_name, num)
+polls.models.Choice.MultipleObjectsReturned: get() returned more than one Choice -- it returned 2!
+2019-01-07 20:22:56,028 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 858, in _resolve_lookup
+    current = current()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 403, in get
+    (self.model._meta.object_name, num)
+polls.models.Choice.MultipleObjectsReturned: get() returned more than one Choice -- it returned 2!
+2019-01-07 20:23:01,938 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 858, in _resolve_lookup
+    current = current()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/db/models/query.py", line 403, in get
+    (self.model._meta.object_name, num)
+polls.models.Choice.MultipleObjectsReturned: get() returned more than one Choice -- it returned 2!
+2019-01-07 20:23:16,850 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/getpair/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 222, in getpair
+    'keep_going': "您也可以点此继续答题，感谢您的参与！",
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 657, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 569, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: '1'
+2019-01-07 20:30:45,804 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:34:52,366 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:35:19,706 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:35:20,165 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/3/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/tianqing/Documents/code/Django/mysite/polls/views.py", line 67, in detail_getpair
+    if question_id == 3: # resource
+NameError: name 'question_id' is not defined
+2019-01-07 20:35:33,585 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:35:39,345 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 20:35:46,109 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 22:47:21,617 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 809, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(3)' from 'range(3)'
+2019-01-07 22:49:26,796 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 22:49:35,289 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' with arguments '('',)' not found. 1 pattern(s) tried: ['polls\\/(?P<pk>[0-9]+)\\/$']
+2019-01-07 22:50:02,362 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 22:56:20,923 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 810, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'endif', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2019-01-07 23:00:50,147 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:01:22,536 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:01:28,230 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:01:38,414 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:04:45,200 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:05:47,420 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:06:48,692 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:07:02,609 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:08:08,055 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:08:18,973 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Forbidden (CSRF token missing or incorrect.): /polls/0/vote/
+2019-01-07 23:10:51,976 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/0/vote/
+2019-01-07 23:11:15,508 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'initvote' with arguments '(0,)' not found. 1 pattern(s) tried: ['polls\\/initvote\\/$']
+2019-01-07 23:11:19,359 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'initvote' with arguments '(0,)' not found. 1 pattern(s) tried: ['polls\\/initvote\\/$']
+2019-01-07 23:11:43,620 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'initvote' with arguments '(0,)' not found. 1 pattern(s) tried: ['polls\\/initvote\\/$']
+2019-01-07 23:12:04,755 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'initvote' with arguments '(0,)' not found. 1 pattern(s) tried: ['polls\\/initvote\\/$']
+2019-01-07 23:12:30,746 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:79] - INFO: delete previous entropy file success
+2019-01-07 23:16:11,463 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:79] - INFO: delete previous entropy file success
+2019-01-07 23:25:40,101 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:25:48,003 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:79] - INFO: delete previous entropy file success
+2019-01-07 23:43:35,650 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-01-07 23:43:40,584 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /favicon.ico
+2019-03-01 11:52:55,013 - /Users/tianqing/Documents/code/Django/mysite/polls/ARAC.py[line:66] - INFO: load entropyinit success
+2019-03-01 11:53:04,193 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/css/bootstrap.min.css
+2019-03-01 11:53:04,196 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/jumbotron.css
+2019-03-01 11:53:04,199 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/css/particles.css
+2019-03-01 11:53:05,002 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /favicon.ico
+2019-03-01 11:54:52,402 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/static/bootstrap.min.css
+2019-03-01 11:54:52,407 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/static/particles.css
+2019-03-01 11:54:52,411 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/jumbotron.css
+2019-03-01 11:54:53,697 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/static/bootstrap.min.css
+2019-03-01 11:54:53,699 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/jumbotron.css
+2019-03-01 11:54:53,703 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/static/particles.css
+2019-03-01 11:54:55,741 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/static/particles.css
+2019-03-01 11:54:55,745 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/static/bootstrap.min.css
+2019-03-01 11:54:55,749 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/jumbotron.css
+2019-03-01 11:55:09,173 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/jumbotron.css
+2019-03-01 12:11:35,836 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/data.html
+2019-03-01 12:12:57,324 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:12:57,332 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:12:57,337 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:12:57,340 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:12:58,786 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:12:58,791 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:12:58,823 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:12:58,828 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:32:04,644 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:32:04,650 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:32:04,654 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:32:04,656 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:32:06,255 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:32:06,263 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:32:06,289 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:32:06,294 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:33:18,521 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:33:18,526 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:33:18,529 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:33:18,533 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:33:20,888 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:33:20,915 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:33:20,920 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:33:20,925 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:33:55,889 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:33:55,893 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:33:55,896 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:33:55,899 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:33:57,579 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:33:57,603 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:33:57,608 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:33:57,612 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:42:29,135 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:42:29,139 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:42:29,145 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:42:29,146 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:42:29,256 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:42:29,296 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:42:29,301 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:42:29,306 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:42:29,617 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /favicon.ico
+2019-03-01 12:42:52,877 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:42:52,880 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:42:52,883 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:42:52,887 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:42:53,005 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:42:53,047 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:42:53,053 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:42:53,058 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:43:15,783 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:43:15,788 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:43:15,790 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:43:15,793 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:43:15,914 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:43:15,954 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:43:15,961 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:43:15,967 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:43:23,925 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:43:23,930 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:43:23,932 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:43:23,936 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:43:23,969 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:43:24,010 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:43:24,016 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:43:24,020 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:43:24,135 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:43:24,137 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:43:24,139 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 12:43:24,141 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:43:24,178 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 12:43:24,218 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 12:43:24,224 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 12:43:24,228 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:21:17,730 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:21:17,733 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:21:17,739 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:21:17,742 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:21:17,861 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:21:17,902 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:21:17,907 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:21:17,912 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:27:28,636 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:27:28,643 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:27:28,647 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:27:28,652 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:27:28,768 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:27:28,808 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:27:28,812 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:27:28,817 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:27:29,122 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /favicon.ico
+2019-03-01 14:27:56,950 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:27:56,953 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:27:56,957 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:27:56,960 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:27:57,071 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:27:57,110 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:27:57,116 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:27:57,121 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:28:03,252 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - ERROR: Internal Server Error: /polls/2/
+Traceback (most recent call last):
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/tianqing/anaconda3/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view polls.views.detail_getpair didn't return an HttpResponse object. It returned None instead.
+2019-03-01 14:31:26,500 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:31:26,501 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:31:26,505 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:31:26,508 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:31:26,624 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:31:26,663 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:31:26,668 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:31:26,673 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:33:07,990 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:33:07,992 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:33:07,995 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:33:07,999 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:33:08,111 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:33:08,150 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:33:08,156 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:33:08,161 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:36:46,262 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:36:46,266 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/works/migrant/graphical.png
+2019-03-01 14:36:46,388 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:36:46,392 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:36:46,394 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:36:46,397 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:36:46,434 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:36:46,439 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:36:46,444 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:23,404 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/yangy.org/works/migrant/graphical.png
+2019-03-01 14:37:23,408 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:23,532 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:23,535 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:23,537 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:23,540 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:23,577 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:23,581 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:23,586 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:25,944 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/yangy.org/works/migrant/graphical.png
+2019-03-01 14:37:25,947 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:25,988 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:25,991 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:25,993 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:25,996 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:26,033 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:26,040 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:26,045 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:34,259 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:34,304 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:34,306 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:34,308 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:34,310 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:34,346 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:34,351 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:34,356 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:34,529 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:34,531 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:34,569 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:34,572 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:37:34,574 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:37:34,611 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:37:34,617 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:37:34,622 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:38:02,667 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:38:02,670 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:38:02,793 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:38:02,797 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:38:02,800 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:38:02,835 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:38:02,840 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:38:02,845 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:38:53,756 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:38:53,759 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:38:53,883 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:38:53,885 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:38:53,888 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:38:53,926 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:38:53,930 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:38:53,936 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:39:13,363 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:39:13,366 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:39:13,488 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:39:13,490 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:39:13,493 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:39:13,529 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:39:13,535 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:39:13,540 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:41:18,036 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:41:18,040 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:41:18,162 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:41:18,163 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:41:18,167 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:41:18,211 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:41:18,216 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:41:18,222 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:41:43,602 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:41:43,605 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:41:43,647 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:41:43,650 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:41:43,653 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:41:43,695 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:41:43,700 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:41:43,706 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:41:45,655 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:41:45,658 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:41:45,697 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:41:45,700 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:41:45,703 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:41:45,742 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:41:45,748 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:41:45,754 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:43:30,199 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:43:30,203 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:43:30,325 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:43:30,329 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:43:30,331 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:43:30,371 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:43:30,378 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:43:30,383 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:43:43,286 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:43:43,332 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:43:43,335 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:43:43,338 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:43:43,342 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:43:43,381 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:43:43,387 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:43:43,393 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:57:31,548 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:57:31,594 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:57:31,596 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js
+2019-03-01 14:57:31,599 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:57:31,601 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/jquery.min.js
+2019-03-01 14:57:31,642 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/bootstrap.min.js
+2019-03-01 14:57:31,647 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.min.js
+2019-03-01 14:57:31,652 - /Users/tianqing/anaconda3/lib/python3.6/site-packages/django/utils/log.py[line:228] - WARNING: Not Found: /polls/dist/js/particles.js

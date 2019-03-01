@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 90%;height: 90%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+		#l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
+		#r-result{height:100%;width:20%;float:left;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s9gjglZAGLCixdSpnlnGuSWaVdLYfGtj"></script>
+	<title>添加多个标注点</title>
+</head>
+<body>
+	
+
+
+
+
+	<h1>{{ question.question_text }}</h1>
+
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+	<form action="{% url 'polls:vote' question.id %}" method="post">
+	{% csrf_token %}
+	{% for choice in question.choice_set.all %}
+	    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+	    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+	{% endfor %}
+	<input type="submit" value="提交">
+	</form>
+
+	<div id="allmap"></div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	// 这里地图可以搞个自适应的大小
+	var point = new BMap.Point(121.404, 31.25);
+	map.centerAndZoom(point, 10);
+	// 编写自定义函数,创建标注
+	function addMarker(point){
+	  var marker = new BMap.Marker(point);
+	  map.addOverlay(marker);
+	}
+
+	// 在这里添加在地图上标注的点
+	// var a = {{ question.question_text }}
+
+	// var point_A = new BMap.Point(121.404, 31.25);
+
+	// var point_B = new BMap.Point(121.804, 31.05);
+
+	// var marker = new BMap.Marker(point_A);  // 创建标注
+	// map.addOverlay(marker);               // 将标注添加到地图中
+	// marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+	// var label = new BMap.Label("A",{offset:new BMap.Size(20,-10)});
+	// marker.setLabel(label);
+
+	// var marker_B = new BMap.Marker(point_B);  // 创建标注
+	// map.addOverlay(marker_B);               // 将标注添加到地图中
+	// marker_B.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+	// var label_B = new BMap.Label("B",{offset:new BMap.Size(20,-10)});
+	// marker_B.setLabel(label_B);
+
+	map.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+

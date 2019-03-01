@@ -1,0 +1,69 @@
+<h1>Results</h1>
+<h1>{{ question.question_text }}</h1>
+<!-- <ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul> -->
+
+
+
+<!-- 显示current accuracy (伪acc)， and a button to recalculating all the parameters, a button to get all the params-->
+
+
+<a href="/polls/5">继续填写？</a>
+
+
+
+{%if question.id == 3 or question.id == 4 %} 
+
+
+
+
+
+
+{%if agemesg%}
+<ul>
+{% for age in agemesg %}
+    <li> {{ age }}</li>
+{% endfor %}
+</ul>
+
+{%endif%}
+
+{%if fammesg%}
+<ul>
+{% for fam in fammesg %}
+    <li> {{ fam }}</li>
+{% endfor %}
+</ul>
+{%endif%}
+
+{%if numprefs%}
+<p>"number of different prefs:" {{numprefs}}</p>
+{%endif%}
+
+{%if numips%}
+<p>"number of different ips:" {{numips}}</p>
+{%endif%}
+
+{%if mumesg %}
+<p><strong>{{ mumesg }}</strong></p>
+{%endif%}
+
+<form action="{% url 'polls:recalresult' question.id %}" method="post">
+	{% csrf_token %}
+	<input type="submit" value="重新计算parameters并显示">
+	
+</form>
+
+<form action="{% url 'polls:getparam' question.id %}" method="post">
+	{% csrf_token %}
+	<input type="submit" value="显示\mu parameters">
+	
+</form>
+{%endif%}
+
+
+
+
