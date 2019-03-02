@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views
 
@@ -12,4 +14,4 @@ urlpatterns = [
     # path('<int:question_id>/getpair/', views.getpair, name='getpair'),
     path('<int:question_id>/results/recalresult/', views.recalresult, name='recalresult'),
     # path('<int:question_id>/results/getparam/', views.getparam, name='getparam'),
-]
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

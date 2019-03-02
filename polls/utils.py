@@ -4,7 +4,6 @@ import math
 import numpy as np
 import pandas as pd
 
-matplotlib.rcParams['toolbar'] = 'None'
 
 class BmapConfig():
     """The configuration of map plotting   

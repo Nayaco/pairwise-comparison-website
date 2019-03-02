@@ -6,7 +6,6 @@ import numpy as np
 import tensorflow as tf
 import tensorflow.contrib.layers as layers
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
 import random 
 
