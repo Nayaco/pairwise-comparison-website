@@ -1,89 +1,57 @@
 import numpy as np
-from .ARAC import ARAC, Params
+import tensorflow as tf
+from .env import ranking_agent
+from .citymodel import model
+from .utils import BmapConfig, BmapPlotter
+import datetime
 
-def init():
+def get_pair(n):
+    # 随机选两个不相同的pair    
+    return np.random.permutation(n)[:2]
 
-	L = 1000  # number of entities to be compared
-	N = 1    # number of compares a worker makes
-	M = 1  # total numebr of workers
-	K = 1     # number of annotators. For simplicity, it's just 1 here
+def calc_params(compare_list, pref_list):
+    my_model = model()
+    num = len(pref_list)
+    dataset = [np.zeros([num * 2, 2 * my_model.D]), \
+           np.zeros([num * 2, 2]), np.zeros([num * 2, 1])]
 
-	Lambda = 1 # represents the tradeoff be- tween exploration and exploitation
+    for i in range(num):
+        pref  = pref_list[i]
+        pair_index = compare_list[i][0]
+        pairs = my_model.F[pair_index, :]
+        dataset[0][2 * i] = np.append(pairs[0], pairs[1])
+        dataset[1][2 * i] = [1, 0] if pref else [0, 1]
+        dataset[2][2 * i] = 1 if pref else -1
+        dataset[0][2 * i + 1] = np.append(pairs[1], pairs[0])
+        dataset[1][2 * i + 1] = [1, 0] if not pref else [0, 1]
+        dataset[2][2 * i + 1] = 1 if not pref else -1
+    # training
+    lr = 5e-3
+    rankAgent = ranking_agent(lr, my_model.D)
+    epoch_size = 1000
+    batch_size = num
+    train_flag = True
+    save_dir   = None
+    verbose    = True
+    rankAgent.train(dataset, epoch_size, batch_size, my_model.F, 
+        my_model.v, train_flag, save_dir, verbose) # training
 
-	alpha_init = 10
-	beta_init  = 1
-	eta_init   = 1
-	mu_init    = 25
-	sigma_init = 25/3
-	kappa      = 10e-4
+    all_score = rankAgent.scores
+    all_score = (all_score - np.min(all_score)) / (np.max(all_score) - np.min(all_score))
 
-	layers = np.array([0.25, 0.7,1.0])
+    np.save('data/all_score'+str(datetime.datetime.now()), all_score)
+    
+    # plot一下
+    map_config = BmapConfig()
+    level_num = 9
+    plotter = BmapPlotter(c1=[0.9, 0.9, 1], c2=[0, 0, 0.9],
+                     levels=np.linspace(start=0, stop=1, num=level_num + 1),
+                     fig_size=(9, 9), shp_file=[0])
+    isMainland = np.load('data/isMainland.npy')
 
+    facility_value = - np.ones([map_config.n_lat, map_config.n_lon])
+    facility_value[(isMainland[0], isMainland[1])] = np.reshape(all_score, [len(all_score), ])
+    # plot
+    # plotter.draw_density(facility_value)
 
-	mu    = np.ones(L) * mu_init / 2
-	emu   = np.exp(mu)
-	sigma = np.ones([L,1]) * sigma_init # sigma squared
-
-	history = np.zeros([L, L])
-
-	params = Params( L, N, M, None, layers, Lambda, kappa,\
-	        mu, sigma, None, None, None, history)
-
-	model = ARAC(params, load_from_prev=False)
-	# model.StartCrowdsourcing(verbose=True)
-
-def test():
-	model = ARAC(load_from_prev=True)
-	model.StartCrowdsourcing(verbose=True)
-
-def get_pair():
-	model = ARAC(load_from_prev=True)
-	return model.get_pairs()[0]
-
-def update_params(pairs, pref):
-	model = ARAC(load_from_prev=True)
-	model.StartRealCrowdsourcing(pairs, pref)
-	# and it saved parameters
-
-def get_mu():
-	model = ARAC(load_from_prev=True)
-	return model.get_mu()
-
-def RecalcParams(compare_list, pref_list):
-	L = 1000  # number of entities to be compared
-	N = 1    # number of compares a worker makes
-	M = 1  # total numebr of workers
-	K = 1     # number of annotators. For simplicity, it's just 1 here
-
-	Lambda = 1 # represents the tradeoff between exploration and exploitation
-
-	alpha_init = 10
-	beta_init  = 1
-	eta_init   = 1
-	mu_init    = 25
-	sigma_init = 25/3
-	kappa      = 10e-4
-
-	layers = np.array([0.25, 0.7,1.0])
-
-
-	mu    = np.ones(L) * mu_init / 2
-	emu   = np.exp(mu)
-	sigma = np.ones([L,1]) * sigma_init # sigma squared
-
-	history = np.zeros([L, L])
-
-	params = Params( L, N, M, None, layers, Lambda, kappa,\
-	        mu, sigma, None, None, None, history)
-
-	model = ARAC(params, load_from_prev=False, recalc=True)
-	for index in range(len(compare_list)):
-		pairs = compare_list[index]
-		pref = pref_list[index]
-		model.StartRealCrowdsourcing(pairs, pref, recalc=True)
-	model.SaveParams()
-
-init()
-print('after initialization')
-# for i in range(100):
-# 	test()
+    return 
