@@ -9,7 +9,7 @@ urlpatterns = [
     path('<int:pk>/', views.detail_getpair, name='detail'),#views.DetailView.as_view()
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
-    path('<int:question_id>/getpair/', views.getpair, name='getpair'),
+    # path('<int:question_id>/getpair/', views.getpair, name='getpair'),
     path('<int:question_id>/results/recalresult/', views.recalresult, name='recalresult'),
-    path('<int:question_id>/results/getparam/', views.getparam, name='getparam'),
+    # path('<int:question_id>/results/getparam/', views.getparam, name='getparam'),
 ]
