@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <!-- <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script> -->
+{% load static %}
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	 <!-- Bootstrap core CSS -->
-    <link href="polls/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'polls/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="polls/jumbotron.css" rel="stylesheet">
+    <link href="{% static 'polls/jumbotron.css' %}" rel="stylesheet">
 
     <!-- css for particles -->
-    <link href="polls/dist/css/particles.css" rel="stylesheet">
+    <link href="{% static 'polls/dist/css/particles.css' %}" rel="stylesheet">
 
 <!-- 	<style type="text/css">
 		body, html {width: 100% ;height: 100%; margin:0;font-family:"微软雅黑";overflow-x: auto;}
@@ -141,11 +142,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/static/dist/js/jquery.min.js"></script>
-    <script src="/static/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'polls/dist/js/jquery.min.js' %}"></script>
+    <script src="{% static 'polls/dist/js/bootstrap.min.js' %}"></script>
 
     <!-- particles -->
-    <script src="/static/dist/js/particles.min.js"></script>
-    <script src="/static/dist/js/particles.js"></script>
+    <script src="{% static 'polls/dist/js/particles.min.js' %}"></script>
+    <script src="{% static 'polls/dist/js/particles.js' %}"></script>
 
 </body>
