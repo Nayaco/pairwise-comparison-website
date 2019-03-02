@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from .env import ranking_agent
 from .citymodel import model
-from .utils import BmapConfig, BmapPlotter
+from .utils import BmapConfig
 import datetime
 
 def get_pair(n):
@@ -44,9 +44,6 @@ def calc_params(compare_list, pref_list):
     # plot一下
     map_config = BmapConfig()
     level_num = 9
-    plotter = BmapPlotter(c1=[0.9, 0.9, 1], c2=[0, 0, 0.9],
-                     levels=np.linspace(start=0, stop=1, num=level_num + 1),
-                     fig_size=(9, 9), shp_file=[0])
     isMainland = np.load('data/isMainland.npy')
 
     facility_value = - np.ones([map_config.n_lat, map_config.n_lon])
