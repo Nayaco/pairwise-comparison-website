@@ -230,13 +230,13 @@ def vote(request, question_id):
 
                 this_user.update(num_compare_cnt=len(Preference_resource.objects.filter(user=this_user[0])))
 
-            if this_user[0].num_compare_cnt == 10 and ip != 'unknown':
-                # 可以显示红包了，然后也显示一下可以答另一个题
+            # if this_user[0].num_compare_cnt == 10 and ip != 'unknown':
+            #     # 可以显示红包了，然后也显示一下可以答另一个题
 
-                return render(request, 'polls/detail.html', {# 你不能再做题了！
-                    'question': question,
-                    'error_message': "本IP已经进行了至少10次回答，谢谢您的配合！支付宝口令红包：xxxxx ，先到先得。您也可以继续答题",
-                    })
+            #     return render(request, 'polls/detail.html', {# 你不能再做题了！
+            #         'question': question,
+            #         'error_message': "本IP已经进行了至少10次回答，谢谢您的配合！支付宝口令红包：xxxxx ，先到先得。您也可以继续答题",
+            #         })
 
             return HttpResponseRedirect(reverse('polls:detail', args=(question.id, ))) # 返回它自己
 
