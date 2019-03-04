@@ -18,15 +18,15 @@
 
         body, html {width: 100% ;height: 100%; margin:1% 1% 1%;;font-family:"微软雅黑";overflow-x: auto;}
 
-        #ouraction{width:95%;height:100%;float:center;overflow: hidden;margin:0;}
+        #ouraction{width:95%;height:150%;float:center;overflow: hidden;margin:0;}
 
         #map1_container,#map2_container {width:80%;height:22%;float:left;overflow: hidden;margin:0;}
         
         #submit_container,#button1,#button2 {margin:1% 5% 1%;width:90%;height:5%;float:left;overflow: hidden;}
         /*#allmap1 {width: 90% ;height: 60%; margin:0;font-family:"微软雅黑";} /*display: -webkit-box;overflow-x: auto;-webkit-overflow-scrolling:touch;*/
 
-        #allmap1{margin:1% 5% 1%;height:100%;}
-        #allmap2{margin:1% 5% 1%;height:100%;}
+        #allmap1{margin:1% 5% 1%;height:90%;}
+        #allmap2{margin:1% 5% 1%;height:90%;}
 
 
         #login_click{ margin-top:0%;}  
@@ -58,7 +58,7 @@
       <div class="container">
         <div class="navbar-header">
           <!-- <img height="50" src="img/sheep2.jpeg" align="left" hspace="6" style="margin-left:-6p;margin-right:20px"> -->
-          <a class="navbar-brand" href="#">上海市各地区居住偏好度调查</a>
+          <a class="navbar-brand" href="./">上海市各地区居住偏好度调查</a>
         </div>
 
       </div>
@@ -70,7 +70,7 @@
             <h3>{{ question.question_text }}</h3>
         </div>
 
-        <p><strong>地图可以用鼠标滚轮或指尖拖动进行放大，将鼠标或指尖放在空白区域可以上下滑动页面</strong></p>
+        <p>A、B选项分别对应上海市内的两个地点。地图可以用鼠标滚轮或指尖拖动进行放大，将鼠标或指尖放在空白区域可以上下滑动页面，也可点此<a href=./>刷新</a>（获取新的地点），点此<a href=../>返回简介页</a>。</p>
 
         {% if error_message %}
             <p><strong>{{ error_message }}</strong></p> 
@@ -102,11 +102,7 @@
             </div>
         </form>
 
-        <div class="page-header">
-            <h3><strong>Contact:</strong></h3> 
-        </div>        
-        <a href=http://yangy.org target="_blank">杨洋</a>, <a href=http://www.cs.zju.edu.cn target="_blank">浙江大学计算机学院</a>副教授<br>
-        email: yangya {at} zju {dot} edu {dot} cn<br>
+
     <!-- </div> -->
 
     {%endif%}
@@ -165,7 +161,7 @@
 
     map1.addControl(top_left_control);        
     map1.addControl(top_left_navigation);     
-    map1.addControl(top_right_navigation);    
+    // map1.addControl(top_right_navigation);    
     
     var map2 = new BMap.Map("allmap2");
     // 这里地图可以搞个自适应的大小
@@ -182,7 +178,7 @@
 
     map2.addControl(top_left_control);        
     map2.addControl(top_left_navigation);     
-    map2.addControl(top_right_navigation);  
+    // map2.addControl(top_right_navigation);  
     // 在这里添加在地图上标注的点
     // var a = {{ question.question_text }}
 
