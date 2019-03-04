@@ -32,9 +32,9 @@
           
         padding: 10px 30px 10px 30px;  
         font-size:16px;  
-        font-family: 宋体,Arial,Helvetica,Verdana,sans-serif;  
+        /*font-family: 宋体,Arial,Helvetica,Verdana,sans-serif;  */
         font-weight:bold;  
-        border-radius:3px;  
+        border-radius:10px;  
           
         -webkit-transition:all linear 0.30s;  
         -moz-transition:all linear 0.30s;  
@@ -73,7 +73,7 @@
 
 		本问卷的数据将进行匿名化处理，并只用于科研用途。<br> <br>
 
-		p.s. 回答10次以上后网页会现实支付宝口令红包，先到先得，感谢填写！<br></p>
+		p.s. 回答10次以上后网页会显示支付宝口令红包，先到先得，感谢填写！<br></p>
 
         </div>
       </div>
@@ -113,15 +113,15 @@
         </div>
         <form action="{% url 'polls:initvote' %}" method="post"> 
 			{%csrf_token%}
-			<h4><strong> 2.1 {{latest_question_list.0.question_text}} </strong></h4>
+			<h4><strong> 3.1 {{latest_question_list.0.question_text}} </strong></h4>
 				{% for choice in latest_question_list.0.choice_set.all %}
-			    	<input type="radio" name="choice0" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-			    	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+			    	<input type="radio" name="choice0" id="choice0{{ forloop.counter }}" value="{{ choice.id }}">
+			    	<label for="choice0{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 			    {%endfor%}
-			<h4><strong> 2.2 {{latest_question_list.1.question_text}} </strong></h4>
+			<h4><strong> 3.2 {{latest_question_list.1.question_text}} </strong></h4>
 				{% for choice in latest_question_list.1.choice_set.all %}
-			    	<input type="radio" name="choice1" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-			    	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+			    	<input type="radio" name="choice1" id="choice1{{ forloop.counter }}" value="{{ choice.id }}">
+			    	<label for="choice1{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 			    {%endfor%}
 			<br>
 			<input id="login_click" type="submit" value="提交并正式进入问卷">
