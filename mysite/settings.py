@@ -25,7 +25,7 @@ SECRET_KEY = 't)kw%ns+5t54d=pfp2xgooi6y5d7xq0q)6#16wy+6h-qvje!zs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['101.132.174.235', '127.0.0.1', 'urbandream.org']
+ALLOWED_HOSTS = ['101.132.174.235', '127.0.0.1', 'urbandream.org', 'urbandreams.net']
 
 
 # Application definition
