@@ -15,39 +15,137 @@
     <!-- <link href="/static/dist/css/particles.css" rel="stylesheet"> -->
 
     <style type="text/css">
+        body, html {
+            width: auto ;
+            height: 100%; 
+            margin:1% 1% 1%;
+            font-family:"sans-serif";}
 
-        body, html {width: 100% ;height: 100%; margin:1% 1% 1%;;font-family:"微软雅黑";overflow-x: auto;}
-
-        #ouraction{width:95%;height:150%;float:center;overflow: hidden;margin:0;}
-
-        #map1_container,#map2_container {width:80%;height:22%;float:left;overflow: hidden;margin:0;}
+        .main-form {
+            width: 95%; 
+            height: 100%; 
+            display: flex;
+        }
+        .form-container {
+            width: 80%; 
+            height: auto; 
+            margin-left: 10%; 
+            margin-right: 10%; 
+            margin-top: 10%; 
+            flex-direction: column;
+        }
+        .map-container {
+            width: auto; 
+            height: 40%;
+        }
+        .map {
+            width: auto; 
+            height: 100%;
+        }    
         
-        #submit_container,#button1,#button2 {margin:1% 5% 1%;width:90%;height:5%;float:left;overflow: hidden;}
-        /*#allmap1 {width: 90% ;height: 60%; margin:0;font-family:"微软雅黑";} /*display: -webkit-box;overflow-x: auto;-webkit-overflow-scrolling:touch;*/
+        .allmap{
+            padding:1% 1% 1% 1%; 
+            height: 90%;
+        }
 
-        #allmap1{margin:1% 5% 1%;height:90%;}
-        #allmap2{margin:1% 5% 1%;height:90%;}
+        .radio-container {
+            display: flex;
+            flex-direction: row;
+            height: 15%;
+            justify-items: center; 
+            align-items: center;
+        }
+        .radio {
+            width: 50%; 
+            height: 80%; 
+            display: flex; 
+            flex-direction: column; 
+            justify-items: center; 
+            align-items: center;
+            padding-top: -5px;
+        }
+        .radio-text {
+            text-align: center; 
+            width: auto; 
+            height: 20px; 
+            font-family:sans-serif; 
+            font-size: 1em;
+            margin-right: 5%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        #button2 {
+            margin-top: 10px;
+        }
+        /*#button2 {
+            margin-top: 10px;
+            transform: rotateY(180deg);
+        }
+        #radio-text2{
+            transform: rotateY(180deg);
+        }*/
+        .radio-inner {
+            display: none;
+        }
+        .radio-inner + .radio-block {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 25px;
+            border-radius: 12px;
+            background-color: #bbb;	
+        }
 
+        .radio-inner + .radio-block:before {
+            content: '';
+            cursor: pointer;
+            position: absolute;
+            top: -2px;
+            left: 0;
+            z-index: 99;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #F7F4F4;
+            box-shadow: 0 3px 1px rgba(0,0,0,0.05), 0 0px 1px rgba(0,0,0,0.3);
+            -webkit-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+        }
+        .radio-inner:checked + .radio-block {
+	        background: #7e8086;	
+        }
+        
+        .radio-inner:checked + .radio-block:before  {
+            content: '';
+            position: absolute;
+            left: 30px;
+            background-color: #464b4e;	
+        }
 
-        #login_click{ margin-top:0%;}  
-        #login_click {  
-              
+        .submit-container {
+            margin-top: 5px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-items: center; 
+            align-items: center;
+        }
+        .submit-button { 
+            margin-top:0%;
+        }  
+        .submit-button {  
             text-decoration:none;  
-            background:#2f435e;  
-            color:#f2f2f2;  
-              
+            background:#7e8286;  
+            color: #f2f2f2;  
             padding: 10px 30px 10px 30px;  
             font-size:1em;  
-            /*font-family: 宋体,Arial,Helvetica,Verdana,sans-serif;  */
             font-weight:bold;  
             border-radius:10px;  
-              
-            -webkit-transition:all linear 0.30s;  
-            -moz-transition:all linear 0.30s;  
-            transition:all linear 0.30s;  
-              
-            }  
-           /*#login_click a:hover { background:#385f9e; }  */
+            transition:all cubic-bezier(0.57, 0.03, 1, 1) 0.30s;  
+        }  
+        .submit-button:hover { 
+            background:#646568; 
+            color:#f2f2f2;
+        }  
 
     </style>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s9gjglZAGLCixdSpnlnGuSWaVdLYfGtj"></script>
@@ -60,7 +158,6 @@
           <!-- <img height="50" src="img/sheep2.jpeg" align="left" hspace="6" style="margin-left:-6p;margin-right:20px"> -->
           <a class="navbar-brand" href="./">上海市各地区居住偏好度调查</a>
         </div>
-
       </div>
     </div>
 
@@ -73,32 +170,46 @@
         <p>A、B选项分别对应上海市内的两个地点。地图可以用鼠标滚轮或指尖拖动进行放大，将鼠标或指尖放在空白区域可以上下滑动页面，也可点此<a href=./>刷新</a>（获取新的地点），点此<a href=../>返回简介页</a>。</p>
 
         {% if error_message %}
-            <p><strong>{{ error_message }}</strong></p> 
+
+        <p><strong>{{ error_message }}</strong></p> 
+        
         {% endif %}
         {% if keep_going %}
-            <a href=../>点此继续答题</a>
+        
+        <a href=../>点此继续答题</a>
+        
         {% endif %}
-
         {%if question.id == 1 or question.id == 2 or compare_list%}
-        <form action="{% url 'polls:vote' question.id %}" method="post" id="ouraction">
-            {% csrf_token %}
-                <div id="map1_container">
-                    <div id="allmap1"></div>
+
+        <form action="{% url 'polls:vote' question.id %}" method="post" id="ouraction" class="main-form">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{% csrf_token %}}">
+            <div class="form-container">
+                <div class="map-container">
+                    <div id="map1_container" class="map">
+                        <div id="allmap1" class="allmap"></div>
+                    </div>
+                    
                 </div>
-                <div id="button1">
-                        <input type="radio" name="choice" id="choice0" value="{{question.choice_set.all.0.id}}">
-                        <label for="choice0">{{question.choice_set.all.0.choice_text}}</label><br>
+                <div class="radio-container">
+                    <div id="button1" class="radio">
+                        <input type="radio" name="choice" id="choice0" class="radio-inner" value="{{question.choice_set.all.0.id}}" checked="checked">
+                        <label for="choice0" class="radio-block"></label>
+                        <span class="radio-text" id="radio-text1">{{question.choice_set.all.0.choice_text}}</span>
+                    </div>
+                    <div id="button2" class="radio">
+                        <span class="radio-text" id="radio-text2">{{question.choice_set.all.1.choice_text}}</span>
+                        <input type="radio" name="choice" id="choice1" class="radio-inner" value="{{question.choice_set.all.1.id}}">
+                        <label for="choice1" class="radio-block"></label>
+                    </div>
                 </div>
-                
-                <div id="map2_container">
-                    <div id="allmap2"></div>
+                <div class="map-container">
+                    <div id="map2_container" class="map">
+                        <div id="allmap2" class="allmap"></div>
+                    </div>
                 </div>
-                <div id="button2">
-                    <input type="radio" name="choice" id="choice1" value="{{question.choice_set.all.1.id}}">
-                    <label for="choice1">{{question.choice_set.all.1.choice_text}}</label><br>
+                <div id="submit_container" class="submit-container">
+                    <input id="login_click" type="submit" value="提交" class="submit-button">
                 </div>
-            <div id="submit_container">
-                <input id="login_click" type="submit" value="提交">
             </div>
         </form>
 
@@ -199,11 +310,9 @@
 
     // var label_B = new BMap.Label("B",{offset:new BMap.Size(20,-10)});
     // marker_B.setLabel(label_B);
-
-
 </script>
     
-    {%if compare_list%}
+{%if compare_list%}
 
 <script type="text/javascript">    
     
@@ -226,7 +335,7 @@
         marker.setLabel(label);
     }
 </script>
-    {%endif%}
+{%endif%}
 
 <script type="text/javascript">
     map1.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的

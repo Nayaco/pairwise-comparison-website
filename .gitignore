@@ -6,3 +6,4 @@ polls/migrations/
 **/__pycache__
 *.log
 *.npy
+.vscode
